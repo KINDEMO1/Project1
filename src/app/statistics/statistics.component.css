@@ -1,0 +1,19 @@
+/* Container that covers the existing part of the web */
+.content-container {
+  position: absolute;
+  top: 15px; /* Account for the 15px navigation bar */
+  left: 16.67%; /* Start from the 3rd column (left side occupies 2 columns out of 12, so 2/12 = 16.67%) */
+  width: 83.33%; /* Cover the remaining part of the page (12 columns - 2 columns = 10 columns, so 10/12 = 83.33%) */
+  height: calc(100vh - 15px); /* Cover full height minus the navigation bar */
+  background-color: white;
+  padding: 20px; /* Add padding inside the container */
+  box-sizing: border-box; /* Ensure padding does not affect the width */
+}
+
+.white-box {
+  background-color: white; /* Set background color to white */
+  padding: 20px; /* Add padding inside the box */
+  border-radius: 8px; /* Optional: Round the corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+  height: 100%; /* Make the white box fill the entire container */
+}

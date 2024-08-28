@@ -1,0 +1,64 @@
+<div class="main_box">
+  <div class=" container-fluid mt-5">
+    <div class="row pt-3 w-max">
+      <div class="col-2">
+        <div class="sidebar_menu">
+         
+            
+          <div class="menu">
+            <ul>
+              <li [ngClass]="currentTab() === 'camera' ? 'active' : ''" (click)="currentTab.set('camera')">
+                <a >Camera</a>
+              </li>
+              <li  [ngClass]="currentTab() === 'speed' ? 'active' : ''" (click)="currentTab.set('speed')">
+                <a>Speed</a>
+              </li>
+              <li [ngClass]="currentTab() === 'logs' ? 'active' : ''" (click)="currentTab.set('logs')">
+                <a >Logs</a>
+              </li>
+              <li [ngClass]="currentTab() === 'statistics' ? 'active' : ''" (click)="currentTab.set('statistics')">
+                <a>Statistics</a>
+              </li>
+            </ul>
+          </div>
+      </div>
+      </div>
+      <div class="col-8">
+        @if(currentTab() === 'camera') {
+          
+              <div>
+                <app-camera [cameraId]="selectedValue()"></app-camera>
+          </div>
+          } @else if (currentTab() === 'speed') {
+          <div>
+            speed
+          </div>
+          } @else if (currentTab() === 'logs') {
+          <div>
+            logs
+          </div>
+          } @else if (currentTab() === 'statistics') {
+            <app-statistics></app-statistics>
+          }
+      </div>
+      <div class="col-2 pt-2 ">	
+        <div class="m-3">
+          <div class="header mb-1">
+            <h4>Available Cameras</h4>
+          </div>
+          <select (change)="onSelectValue($event.target)" name="selectedValue" class="form-select camera-options">
+            @for(cam of cameraSites; track cam.id) {
+              <option [value]="cam.id">{{ cam.camera_name}}</option>
+            }
+          </select>
+          <ul class="list-unstyled">
+            @for(site of siteList(); track site.site_id) {
+              <li>{{site.site_address}}</li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+</div>

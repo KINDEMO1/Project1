@@ -1,0 +1,24 @@
+<div class="body">
+  <div class="wrapper  ">
+    <div class="form-box login">
+      <h2>Login</h2>
+      <form action="#">
+        <div class="input-box">
+          <span class="icon"></span>
+          <label>Email</label>
+          <input [ngModel]="username()" name="username" (ngModelChange)="username.set($event)" type="email" required />
+        </div>
+        <div class="input-box">
+          <span class="icon"></span>
+          <label>Password</label>
+          <input [ngModel]="password()" name="password" (ngModelChange)="password.set($event)" type="email" required />
+        </div>
+
+
+          <button type="submit" class="btn" (click)="login()">Login</button>
+
+        
+      </form>
+    </div>
+  </div>
+</div>
